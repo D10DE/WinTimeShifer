@@ -1,5 +1,5 @@
 # WinTimeShifer
-The script shifts the windows' time step by step to fix the time difference smoothly.
+The VBS script shifts the windows' time step by step to fix the time difference smoothly.
 
 To use it you should at first modify it a bit. There are three variables:
 1. Increment in seconds, ususally float because you need in milliseconds to make time shifting smooth. 100 ms is fine. It must be positive if you need to increase the Windows' time. Otherwise, if you need to decrease the time, then use negative value.
@@ -16,3 +16,8 @@ Also there are some delays in Windows' time service and maybe another programs w
 It means that your increment may cause bigger or smaller time shift than you have set. 
 That's why you should to test the script first with smaller parameters. Otherwise your time can be changed too fast or too slow. 
 For example, in my case incr = 0.1 caused 300 ms shift per step approx and -0.6 caused the same 300 ms shift but for decreasing the time. 
+
+Also you should set CScript as default scripting host by command in CMD
+wscript.exe //H:cscript
+
+And then you can run the script in CMD.
